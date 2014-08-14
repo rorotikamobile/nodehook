@@ -59,11 +59,11 @@ function executePostReceiveScript(config, username) {
 	var branch = config.branch,
 		script = config.script,
 		reponame = config.reponame,
-		user = config.runas;
-		command = util.format('sudo -u %s %s', user, script);
-
-
-	exec(command, { cwd: path.dirname(script)  }, function(error, stdout, stderr) {
+		user = config.runas,
+		command = util.format('sudo -u %s sh -c "cd %s; bash %s"', user, path.dirname(script), script);
+ 
+	console.log(util.format('Executing %s as user %s.', user, script));
+	exec(command, function(error, stdout, stderr) {
 		console.log(stdout);
 
 		if (error) {

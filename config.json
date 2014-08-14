@@ -2,13 +2,15 @@
 	"port": 9001,
 	"hooks": [{
 		"reponame": "rormob",
+		"branch": "deploy",
+		"script": "/home/website/rormob/.git/hooks/deploy-hook.sh",
+		"runas": "website"
+	},
+	{
+		"reponame": "blog",
 		"branch": "master",
-		"script": "/tmp/test.sh",
-		"runas": "website"
-	}, {
-		"reponame": "rormobz",
-		"branch": "something",
-		"script": "asdfasdfas",
-		"runas": "website"
-	}]
+		"script": "/home/blog/blog/.git/hooks/deploy-hook.sh",
+		"runas": "blog"
+	}
+	]
 }
