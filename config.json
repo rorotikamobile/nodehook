@@ -1,0 +1,14 @@
+{
+	"port": 9001,
+	"hooks": [{
+		"reponame": "rormob",
+		"branch": "master",
+		"script": "/tmp/test.sh",
+		"runas": "website"
+	}, {
+		"reponame": "rormobz",
+		"branch": "something",
+		"script": "asdfasdfas",
+		"runas": "website"
+	}]
+}
